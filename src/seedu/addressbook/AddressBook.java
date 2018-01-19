@@ -42,7 +42,7 @@ public class AddressBook {
     /**
      * A decorative prefix added to the beginning of lines printed by AddressBook
      */
-    private static final String LINE_PREFIX = "|| ";
+    private static final String LINE_PREFIX = "+ ";
 
     /**
      * A platform independent line separator.

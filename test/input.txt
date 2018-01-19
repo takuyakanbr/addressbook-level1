@@ -1,3 +1,6 @@
+  # test help command
+  help
+
 ##########################################################
 # invalid command
 ##########################################################
@@ -32,6 +35,14 @@
   list
   add Betsy Choo p/222222 e/benchoo@nus.edu.sg
   list
+  add John Doe p/91234567 e/hello@example.com
+  list
+  add John Sim p/91234568 e/hellooo@example.com
+  list
+  add Dohn Joe p/81234567 e/joe@dohn.com
+  list
+  add Marvin p/81111111 e/marvin@marvin.com
+  list
 
   # order of phone and email should not matter
   add Charlie Dickson e/charlie.d@nus.edu.sg p/333333
@@ -58,8 +69,10 @@
   find Betsy
   # find multiple with same keyword
   find Dickson
+  find John
   # find multiple with some keywords
   find Charlie Betsy
+  find Marvin John
 
 ##########################################################
 # test delete person command
