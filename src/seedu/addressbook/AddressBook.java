@@ -390,8 +390,8 @@ public class AddressBook {
      * @return  size 2 array; first element is the command type and second element is the arguments string
      */
     private static String[] splitCommandWordAndArgs(String rawUserInput) {
-        final String[] split =  rawUserInput.trim().split("\\s+", 2);
-        return split.length == 2 ? split : new String[] { split[0] , "" }; // else case: no parameters
+        final String[] parts =  rawUserInput.trim().split("\\s+", 2);
+        return parts.length == 2 ? parts : new String[] { parts[0] , "" }; // else case: no parameters
     }
 
     /**
@@ -572,9 +572,9 @@ public class AddressBook {
      * @return feedback display message for the operation result
      */
     private static String executeListAllPersonsInAddressBook() {
-        ArrayList<HashMap<String, String>> toBeDisplayed = getAllPersonsInAddressBook();
-        showToUser(toBeDisplayed);
-        return getMessageForPersonsDisplayedSummary(toBeDisplayed);
+        ArrayList<HashMap<String, String>> persons = getAllPersonsInAddressBook();
+        showToUser(persons);
+        return getMessageForPersonsDisplayedSummary(persons);
     }
 
     /**
@@ -630,8 +630,8 @@ public class AddressBook {
     /**
      * Shows a message to the user
      */
-    private static void showToUser(String[] message) {
-        for (String m : message) {
+    private static void showToUser(String[] messageParts) {
+        for (String m : messageParts) {
             System.out.println(LINE_PREFIX + m);
         }
     }
