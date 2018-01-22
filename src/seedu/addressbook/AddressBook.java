@@ -590,14 +590,21 @@ public class AddressBook {
     private static String getUserInput() {
         System.out.print(LINE_PREFIX + MESSAGE_ENTER_COMMAND);
         String inputLine = SCANNER.nextLine();
-        // silently consume all blank and comment lines
-        while (inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER) {
+
+        while (isBlankOrCommentLine(inputLine)) {
             inputLine = SCANNER.nextLine();
         }
         return inputLine;
     }
 
-   /*
+    /**
+     * Returns true if the given line is blank or a comment.
+     */
+    private static boolean isBlankOrCommentLine(String inputLine) {
+        return inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER;
+    }
+
+    /*
     * NOTE : =============================================================
     * Note how the method below uses Java 'Varargs' feature so that the
     * method can accept a varying number of message parameters.
