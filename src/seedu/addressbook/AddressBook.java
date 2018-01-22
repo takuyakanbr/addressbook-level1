@@ -607,27 +607,27 @@ public class AddressBook {
     }
 
     /*
-    * NOTE : =============================================================
-    * Note how the method below uses Java 'Varargs' feature so that the
-    * method can accept a varying number of message parameters.
-    * ====================================================================
-    */
+     * NOTE : =============================================================
+     * Note how the method below uses Java 'Varargs' feature so that the
+     * method can accept a varying number of message parameters.
+     * ====================================================================
+     */
 
     /**
      * Shows a message to the user
      */
     private static void showToUser(String message) {
-		System.out.println(LINE_PREFIX + message);
+        System.out.println(LINE_PREFIX + message);
     }
 
-	/**
-	 * Shows a message to the user
-	 */
-	private static void showToUser(String[] message) {
-		for (String m : message) {
-			System.out.println(LINE_PREFIX + m);
-		}
-	}
+    /**
+     * Shows a message to the user
+     */
+    private static void showToUser(String[] message) {
+        for (String m : message) {
+            System.out.println(LINE_PREFIX + m);
+        }
+    }
 
     /**
      * Shows the list of persons to the user.
@@ -649,8 +649,8 @@ public class AddressBook {
             final HashMap<String, String> person = persons.get(i);
             final int displayIndex = i + DISPLAYED_INDEX_OFFSET;
             messageAccumulator.append('\t')
-                              .append(getIndexedPersonListElementMessage(displayIndex, person))
-                              .append(LS);
+                    .append(getIndexedPersonListElementMessage(displayIndex, person))
+                    .append(LS);
         }
         return messageAccumulator.toString();
     }
@@ -695,7 +695,7 @@ public class AddressBook {
      * @return the actual person object in the last shown person listing
      */
     private static HashMap<String, String> getPersonByLastVisibleIndex(int lastVisibleIndex) {
-       return latestPersonListingView.get(lastVisibleIndex - DISPLAYED_INDEX_OFFSET);
+        return latestPersonListingView.get(lastVisibleIndex - DISPLAYED_INDEX_OFFSET);
     }
 
 
