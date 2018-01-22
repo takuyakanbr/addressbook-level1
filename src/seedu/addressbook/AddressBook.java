@@ -159,8 +159,8 @@ public class AddressBook {
 
     /*
      * NOTE : =============================================================================================
-     * Note that the type of the variable below can also be declared as List<HashMap<String, String>>, as follows:
-     *    private static final List<HashMap<String, String>> ALL_PERSONS = new ArrayList<>()
+     * Note that the type of the variable below can also be declared as List<HashMap<String, String>>,
+     *    as follows: private static final List<HashMap<String, String>> ALL_PERSONS = new ArrayList<>()
      * That is because List is an interface implemented by the ArrayList class.
      * In this code we use ArrayList instead because we wanted to to stay away from advanced concepts
      * such as interface inheritance.
@@ -177,7 +177,7 @@ public class AddressBook {
      * This is a subset of the full list. Deleting persons in the pull list does not delete
      * those persons from this list.
      */
-    private static ArrayList<HashMap<String, String>> latestPersonListingView = getAllPersonsInAddressBook(); // initial view is of all
+    private static ArrayList<HashMap<String, String>> latestPersonListingView = getAllPersonsInAddressBook();
 
     /**
      * The path to the file used for storing person data.
@@ -296,8 +296,8 @@ public class AddressBook {
     }
 
     /**
-     * Returns true if the given file path is valid.
-     * A file path is valid if it has a valid parent directory as determined by {@link #hasValidParentDirectory}
+     * Returns true if the given file path is valid. A file path is valid if it has a
+     * valid parent directory as determined by {@link #hasValidParentDirectory}
      * and a valid file name as determined by {@link #hasValidFileName}.
      */
     private static boolean isValidFilePath(String filePath) {
@@ -388,7 +388,8 @@ public class AddressBook {
     }
 
     /**
-     * Constructs a generic feedback message for an invalid command from user, with instructions for correct usage.
+     * Constructs a generic feedback message for an invalid command from user,
+     * with instructions for correct usage.
      *
      * @param correctUsageInfo message showing the correct usage
      * @return invalid command args feedback message
@@ -427,8 +428,8 @@ public class AddressBook {
      * @return successful add person feedback message
      */
     private static String getMessageForSuccessfulAddPerson(HashMap<String, String> addedPerson) {
-        return String.format(MESSAGE_ADDED,
-                getNameFromPerson(addedPerson), getPhoneFromPerson(addedPerson), getEmailFromPerson(addedPerson));
+        return String.format(MESSAGE_ADDED, getNameFromPerson(addedPerson),
+                getPhoneFromPerson(addedPerson), getEmailFromPerson(addedPerson));
     }
 
     /**
@@ -471,7 +472,8 @@ public class AddressBook {
      * @param keywords for searching
      * @return list of persons in full model with name containing some of the keywords
      */
-    private static ArrayList<HashMap<String, String>> getPersonsWithNameContainingAnyKeyword(Collection<String> keywords) {
+    private static ArrayList<HashMap<String, String>> getPersonsWithNameContainingAnyKeyword(
+            Collection<String> keywords) {
         final ArrayList<HashMap<String, String>> matchedPersons = new ArrayList<>();
         for (HashMap<String, String> person : getAllPersonsInAddressBook()) {
             final Set<String> wordsInName = new HashSet<>(splitByWhitespace(getNameFromPerson(person)));
@@ -661,7 +663,8 @@ public class AddressBook {
      * @return formatted listing message with index
      */
     private static String getIndexedPersonListElementMessage(int visibleIndex, HashMap<String, String> person) {
-        return String.format(MESSAGE_DISPLAY_LIST_ELEMENT_INDEX, visibleIndex) + getMessageForFormattedPersonData(person);
+        return String.format(MESSAGE_DISPLAY_LIST_ELEMENT_INDEX, visibleIndex)
+                + getMessageForFormattedPersonData(person);
     }
 
     /**
@@ -732,7 +735,8 @@ public class AddressBook {
      * @return the list of decoded persons
      */
     private static ArrayList<HashMap<String, String>> loadPersonsFromFile(String filePath) {
-        final Optional<ArrayList<HashMap<String, String>>> successfullyDecoded = decodePersonsFromStrings(getLinesInFile(filePath));
+        final Optional<ArrayList<HashMap<String, String>>> successfullyDecoded =
+                decodePersonsFromStrings(getLinesInFile(filePath));
         if (!successfullyDecoded.isPresent()) {
             showToUser(MESSAGE_INVALID_STORAGE_FILE_CONTENT);
             exitProgram();
@@ -793,7 +797,8 @@ public class AddressBook {
     /**
      * Deletes the specified person from the addressbook if it is inside. Saves any changes to storage file.
      *
-     * @param exactPerson the actual person inside the address book (exactPerson == the person to delete in the full list)
+     * @param exactPerson the actual person inside the address book
+     *                    (exactPerson == the person to delete in the full list)
      * @return true if the given person was found and deleted in the model
      */
     private static boolean deletePersonFromAddressBook(HashMap<String, String> exactPerson) {
@@ -939,7 +944,8 @@ public class AddressBook {
      * @return if cannot decode any: empty Optional
      *         else: Optional containing decoded persons
      */
-    private static Optional<ArrayList<HashMap<String, String>>> decodePersonsFromStrings(ArrayList<String> encodedPersons) {
+    private static Optional<ArrayList<HashMap<String, String>>> decodePersonsFromStrings(
+            ArrayList<String> encodedPersons) {
         final ArrayList<HashMap<String, String>> decodedPersons = new ArrayList<>();
         for (String encodedPerson : encodedPersons) {
             final Optional<HashMap<String, String>> decodedPerson = decodePersonFromString(encodedPerson);
