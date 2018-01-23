@@ -430,7 +430,7 @@ public class AddressBook {
      * Constructs a feedback message for a successful add person command execution.
      *
      * @see #executeAddPerson(String)
-     * @param addedPerson person who was successfully added.
+     * @param addedPerson the person who was successfully added.
      * @return successful add person feedback message.
      */
     private static String getMessageForSuccessfulAddPerson(HashMap<PersonProperty, String> addedPerson) {
@@ -456,7 +456,7 @@ public class AddressBook {
     /**
      * Constructs a feedback message to summarise an operation that displayed a listing of persons.
      *
-     * @param personsDisplayed used to generate summary.
+     * @param personsDisplayed the list of persons used to generate the summary.
      * @return summary message for persons displayed.
      */
     private static String getMessageForPersonsDisplayedSummary(
@@ -477,7 +477,7 @@ public class AddressBook {
     /**
      * Retrieves all persons in the full model whose names contain some of the specified keywords.
      *
-     * @param keywords for searching.
+     * @param keywords set of keywords to be used for searching.
      * @return list of persons in full model with name containing some of the keywords.
      */
     private static ArrayList<HashMap<PersonProperty, String>> getPersonsWithNameContainingAnyKeyword(
@@ -533,7 +533,7 @@ public class AddressBook {
      * Extracts the target's index from the raw delete person args string.
      *
      * @param rawArgs raw command args string for the delete person command.
-     * @return extracted index.
+     * @return extracted target index.
      */
     private static int extractTargetIndexFromDeletePersonArgs(String rawArgs) {
         return Integer.parseInt(rawArgs.trim());
@@ -542,8 +542,8 @@ public class AddressBook {
     /**
      * Checks that the given index is within bounds and valid for the last shown person list view.
      *
-     * @param index to check.
-     * @return whether it is valid.
+     * @param index the index to be checked.
+     * @return true if the index is valid, or false if otherwise.
      */
     private static boolean isDisplayIndexValidForLastPersonListingView(int index) {
         return index >= DISPLAYED_INDEX_OFFSET && index < latestPersonListingView.size() + DISPLAYED_INDEX_OFFSET;
@@ -553,7 +553,7 @@ public class AddressBook {
      * Constructs a feedback message for a successful delete person command execution.
      *
      * @see #executeDeletePerson(String)
-     * @param deletedPerson successfully deleted.
+     * @param deletedPerson the person who was successfully deleted.
      * @return successful delete person feedback message.
      */
     private static String getMessageForSuccessfulDelete(HashMap<PersonProperty, String> deletedPerson) {
@@ -571,7 +571,7 @@ public class AddressBook {
     }
 
     /**
-     * Displays all persons in the address book to the user; in added order.
+     * Displays all persons in the address book to the user, in added order.
      *
      * @return feedback display message for the operation result.
      */
@@ -669,7 +669,7 @@ public class AddressBook {
      * Constructs a prettified listing element message to represent a person and their data.
      *
      * @param visibleIndex visible index for this listing.
-     * @param person to show.
+     * @param person the person whose data is to be shown.
      * @return formatted listing message with index.
      */
     private static String getIndexedPersonListElementMessage(int visibleIndex, HashMap<PersonProperty, String> person) {
@@ -680,8 +680,8 @@ public class AddressBook {
     /**
      * Constructs a prettified string to show the user a person's data.
      *
-     * @param person to show.
-     * @return formatted message showing internal state.
+     * @param person the person whose data is to be shown.
+     * @return formatted message showing the person's data.
      */
     private static String getMessageForFormattedPersonData(HashMap<PersonProperty, String> person) {
         return String.format(MESSAGE_DISPLAY_PERSON_DATA,
@@ -716,9 +716,9 @@ public class AddressBook {
      */
 
     /**
-     * Creates storage file if it does not exist. Shows feedback to user.
+     * Creates storage file if it does not exist. Shows feedback to the user.
      *
-     * @param filePath file to create if not present.
+     * @param filePath the path to the storage file.
      */
     private static void createFileIfMissing(String filePath) {
         final File storageFile = new File(filePath);
@@ -741,7 +741,7 @@ public class AddressBook {
      * Converts contents of a file into a list of persons.
      * Shows error messages and exits program if any errors in reading or decoding was encountered.
      *
-     * @param filePath file to load from.
+     * @param filePath the path to the file from which data is loaded.
      * @return the list of decoded persons.
      */
     private static ArrayList<HashMap<PersonProperty, String>> loadPersonsFromFile(String filePath) {
@@ -757,6 +757,9 @@ public class AddressBook {
     /**
      * Gets all lines in the specified file as a list of strings. Line separators are removed.
      * Shows error messages and exits program if unable to read from file.
+     *
+     * @param filePath the path to the file from which the lines are retrieved.
+     * @return a list of strings of the lines retrieved from the file.
      */
     private static ArrayList<String> getLinesInFile(String filePath) {
         ArrayList<String> lines = null;
@@ -775,7 +778,7 @@ public class AddressBook {
     /**
      * Saves all data to the file. Exits program if there is an error saving to file.
      *
-     * @param filePath file for saving.
+     * @param filePath the path to the file to which data is saved.
      */
     private static void savePersonsToFile(ArrayList<HashMap<PersonProperty, String>> persons, String filePath) {
         final ArrayList<String> linesToWrite = encodePersonsToStrings(persons);
@@ -797,7 +800,7 @@ public class AddressBook {
     /**
      * Adds a person to the address book. Saves changes to storage file.
      *
-     * @param person to add.
+     * @param person the person to be added.
      */
     private static void addPersonToAddressBook(HashMap<PersonProperty, String> person) {
         ALL_PERSONS.add(person);
@@ -805,11 +808,10 @@ public class AddressBook {
     }
 
     /**
-     * Deletes the specified person from the addressbook if it is inside. Saves any changes to storage file.
+     * Deletes the specified person from the address book if it is inside. Saves any changes to storage file.
      *
-     * @param exactPerson the actual person inside the address book
-     *                    (exactPerson == the person to delete in the full list).
-     * @return true if the given person was found and deleted in the model.
+     * @param exactPerson the person to be deleted from the address book.
+     * @return true if the given person was found and deleted from the address book.
      */
     private static boolean deletePersonFromAddressBook(HashMap<PersonProperty, String> exactPerson) {
         if (!ALL_PERSONS.remove(exactPerson)) {
@@ -835,9 +837,9 @@ public class AddressBook {
     }
 
     /**
-     * Resets the internal model with the given data. Does not save to file.
+     * Resets the address book with the given data. Does not save to file.
      *
-     * @param persons list of persons to initialise the model with.
+     * @param persons list of persons to initialise the address book with.
      */
     private static void initialiseAddressBookModel(ArrayList<HashMap<PersonProperty, String>> persons) {
         ALL_PERSONS.clear();
@@ -852,39 +854,39 @@ public class AddressBook {
      */
 
     /**
-     * Returns the given person's name.
+     * Returns the name of the specified person.
      *
-     * @param person whose name you want.
+     * @param person the person whose name is to be retrieved.
      */
     private static String getNameFromPerson(HashMap<PersonProperty, String> person) {
         return person.get(PersonProperty.NAME);
     }
 
     /**
-     * Returns given person's phone number.
+     * Returns the phone number of the specified person.
      *
-     * @param person whose phone number you want.
+     * @param person the person whose phone number is to be retrieved.
      */
     private static String getPhoneFromPerson(HashMap<PersonProperty, String> person) {
         return person.get(PersonProperty.PHONE);
     }
 
     /**
-     * Returns given person's email.
+     * Returns the email of the specified person.
      *
-     * @param person whose email you want.
+     * @param person the person whose email is to be retrieved.
      */
     private static String getEmailFromPerson(HashMap<PersonProperty, String> person) {
         return person.get(PersonProperty.EMAIL);
     }
 
     /**
-     * Creates a person from the given data.
+     * Creates a person from the specified name, phone number, and email.
      *
-     * @param name of person.
-     * @param phone without data prefix.
-     * @param email without data prefix.
-     * @return constructed person.
+     * @param name the name of the person.
+     * @param phone the phone number of the person, without the data prefix.
+     * @param email the email of the person, without the data prefix.
+     * @return a new person constructed using the provided information.
      */
     private static HashMap<PersonProperty, String> makePersonFromData(String name, String phone, String email) {
         final HashMap<PersonProperty, String> person = new HashMap<>();
@@ -897,8 +899,8 @@ public class AddressBook {
     /**
      * Encodes a person into a decodable and readable string representation.
      *
-     * @param person to be encoded.
-     * @return encoded string.
+     * @param person the person to be encoded.
+     * @return a string encoding of the person.
      */
     private static String encodePersonToString(HashMap<PersonProperty, String> person) {
         return String.format(PERSON_STRING_REPRESENTATION,
@@ -908,8 +910,8 @@ public class AddressBook {
     /**
      * Encodes list of persons into list of decodable and readable string representations.
      *
-     * @param persons to be encoded.
-     * @return encoded strings.
+     * @param persons a list of persons to be encoded.
+     * @return a list of string encodings of each of the persons in the provided list.
      */
     private static ArrayList<String> encodePersonsToStrings(ArrayList<HashMap<PersonProperty, String>> persons) {
         final ArrayList<String> encoded = new ArrayList<>();
@@ -927,11 +929,11 @@ public class AddressBook {
      */
 
     /**
-     * Decodes a person from it's supposed string representation.
+     * Decodes a person from its supposed string representation.
      *
-     * @param encoded string to be decoded
-     * @return if cannot decode: empty Optional
-     *         else: Optional containing decoded person.
+     * @param encoded the string to be decoded.
+     * @return an Optional containing the decoded person, if the string could be decoded,
+     *         or an empty Optional, if the string could not be decoded.
      */
     private static Optional<HashMap<PersonProperty, String>> decodePersonFromString(String encoded) {
         if (!isPersonDataExtractableFrom(encoded)) {
@@ -950,9 +952,9 @@ public class AddressBook {
     /**
      * Decodes persons from a list of string representations.
      *
-     * @param encodedPersons strings to be decoded.
-     * @return if cannot decode any: empty Optional
-     *         else: Optional containing decoded persons.
+     * @param encodedPersons the list containing the strings to be decoded.
+     * @return an Optional containing a list of the decoded persons, if all the strings could be decoded,
+     *         or an empty Optional, if any of the strings could not be decoded.
      */
     private static Optional<ArrayList<HashMap<PersonProperty, String>>> decodePersonsFromStrings(
             ArrayList<String> encodedPersons) {
@@ -968,8 +970,8 @@ public class AddressBook {
     }
 
     /**
-     * Returns true if person data (email, name, phone etc) can be extracted from the argument string.
-     * Format is [name] p/[phone] e/[email], phone and email positions can be swapped.
+     * Returns true if person data (email, name, phone etc) can be extracted from the specified string.
+     * Format is [name] p/[phone] e/[email], and phone and email positions can be swapped.
      *
      * @param personData person string representation.
      */
@@ -986,7 +988,7 @@ public class AddressBook {
      * Extracts substring representing person name from person string representation.
      *
      * @param encoded person string representation.
-     * @return name argument.
+     * @return the extracted person name.
      */
     private static String extractNameFromPersonString(String encoded) {
         final int indexOfPhonePrefix = encoded.indexOf(PERSON_DATA_PREFIX_PHONE);
@@ -1000,7 +1002,7 @@ public class AddressBook {
      * Extracts substring representing phone number from person string representation.
      *
      * @param encoded person string representation.
-     * @return phone number argument WITHOUT prefix.
+     * @return the extracted phone number, without the prefix.
      */
     private static String extractPhoneFromPersonString(String encoded) {
         final int indexOfPhonePrefix = encoded.indexOf(PERSON_DATA_PREFIX_PHONE);
@@ -1023,7 +1025,7 @@ public class AddressBook {
      * Extracts substring representing email from person string representation.
      *
      * @param encoded person string representation.
-     * @return email argument WITHOUT prefix.
+     * @return the extracted email, without the prefix.
      */
     private static String extractEmailFromPersonString(String encoded) {
         final int indexOfPhonePrefix = encoded.indexOf(PERSON_DATA_PREFIX_PHONE);
@@ -1045,7 +1047,7 @@ public class AddressBook {
     /**
      * Returns true if the given person's data fields are valid.
      *
-     * @param person String array representing the person (used in internal data).
+     * @param person the person whose data is to be validated.
      */
     private static boolean isPersonDataValid(HashMap<PersonProperty, String> person) {
         return isPersonNameValid(person.get(PersonProperty.NAME))
@@ -1062,9 +1064,9 @@ public class AddressBook {
      */
 
     /**
-     * Returns true if the given string as a legal person name.
+     * Returns true if the given string is a legal person name.
      *
-     * @param name to be validated.
+     * @param name the person name to be validated.
      */
     private static boolean isPersonNameValid(String name) {
         return name.matches("(\\w|\\s)+");  // name is nonempty mixture of alphabets and whitespace
@@ -1072,9 +1074,9 @@ public class AddressBook {
     }
 
     /**
-     * Returns true if the given string as a legal person phone number.
+     * Returns true if the given string is a legal person phone number.
      *
-     * @param phone to be validated.
+     * @param phone the phone number to be validated.
      */
     private static boolean isPersonPhoneValid(String phone) {
         return phone.matches("\\d+");    // phone nonempty sequence of digits
@@ -1084,8 +1086,7 @@ public class AddressBook {
     /**
      * Returns true if the given string is a legal person email.
      *
-     * @param email to be validated.
-     * @return whether arg is a valid person email.
+     * @param email the email to be validated.
      */
     private static boolean isPersonEmailValid(String email) {
         return email.matches("\\S+@\\S+\\.\\S+"); // email is [non-whitespace]@[non-whitespace].[non-whitespace]
@@ -1165,9 +1166,9 @@ public class AddressBook {
     /**
      * Removes the prefix from the given string, if the prefix occurs at the start of the string.
      *
-     * @param fullString source string.
-     * @param prefix prefix to be removed.
-     * @return string without the prefix.
+     * @param fullString the source string.
+     * @param prefix the prefix to be removed.
+     * @return the resulting string without the prefix at the start.
      */
     private static String removePrefix(String fullString, String prefix) {
         return fullString.startsWith(prefix) ? fullString.replace(prefix, "") : fullString;
@@ -1176,8 +1177,8 @@ public class AddressBook {
     /**
      * Splits a source string into the list of substrings that were separated by whitespace.
      *
-     * @param toSplit source string.
-     * @return split by whitespace.
+     * @param toSplit the source string to be split.
+     * @return the list of strings created by the splitting.
      */
     private static ArrayList<String> splitByWhitespace(String toSplit) {
         return new ArrayList<>(Arrays.asList(toSplit.trim().split("\\s+")));
