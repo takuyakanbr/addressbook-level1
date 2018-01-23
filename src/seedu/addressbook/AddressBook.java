@@ -522,7 +522,7 @@ public class AddressBook {
      */
     private static boolean isDeletePersonArgsValid(String rawArgs) {
         try {
-            final int extractedIndex = Integer.parseInt(rawArgs.trim()); // use standard libraries to parse
+            final int extractedIndex = Integer.parseInt(rawArgs.trim());
             return extractedIndex >= DISPLAYED_INDEX_OFFSET;
         } catch (NumberFormatException nfe) {
             return false;
@@ -934,7 +934,6 @@ public class AddressBook {
      *         else: Optional containing decoded person.
      */
     private static Optional<HashMap<PersonProperty, String>> decodePersonFromString(String encoded) {
-        // check that we can extract the parts of a person from the encoded string
         if (!isPersonDataExtractableFrom(encoded)) {
             return Optional.empty();
         }
@@ -945,7 +944,6 @@ public class AddressBook {
                 extractEmailFromPersonString(encoded)
         );
 
-        // check that the constructed person is valid
         return isPersonDataValid(decodedPerson) ? Optional.of(decodedPerson) : Optional.empty();
     }
 
