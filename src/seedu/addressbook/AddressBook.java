@@ -812,11 +812,11 @@ public class AddressBook {
      * @return true if the given person was found and deleted in the model.
      */
     private static boolean deletePersonFromAddressBook(HashMap<PersonProperty, String> exactPerson) {
-        final boolean changed = ALL_PERSONS.remove(exactPerson);
-        if (changed) {
-            savePersonsToFile(getAllPersonsInAddressBook(), storageFilePath);
+        if (!ALL_PERSONS.remove(exactPerson)) {
+            return false;
         }
-        return changed;
+        savePersonsToFile(getAllPersonsInAddressBook(), storageFilePath);
+        return true;
     }
 
     /**
