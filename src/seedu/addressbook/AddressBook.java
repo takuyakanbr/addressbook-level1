@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
@@ -593,9 +594,9 @@ public class AddressBook {
      * @return feedback display message for the operation result.
      */
     private static String executeSortAllPersonsInAddressBook() {
-        ArrayList<HashMap<PersonProperty, String>> persons = getAllPersonsInAddressBook();
-        showToUser(persons);
-        return getMessageForPersonsDisplayedSummary(persons);
+        ArrayList<HashMap<PersonProperty, String>> sortedPersons = sortPersonsByName(getAllPersonsInAddressBook());
+        showToUser(sortedPersons);
+        return getMessageForPersonsDisplayedSummary(sortedPersons);
     }
 
     /**
@@ -1070,6 +1071,20 @@ public class AddressBook {
         return isPersonNameValid(person.get(PersonProperty.NAME))
                 && isPersonPhoneValid(person.get(PersonProperty.PHONE))
                 && isPersonEmailValid(person.get(PersonProperty.EMAIL));
+    }
+
+    /**
+     * Returns a sorted list, containing persons from the specified list,
+     * sorted by name in alphabetical order.
+     *
+     * @param persons the list of persons to be sorted.
+     * @return the sorted list of persons.
+     */
+    private static ArrayList<HashMap<PersonProperty, String>> sortPersonsByName(
+            ArrayList<HashMap<PersonProperty, String>> persons) {
+        ArrayList<HashMap<PersonProperty, String>> sortedPersons = new ArrayList<>(persons);
+        sortedPersons.sort(Comparator.comparing(person -> person.get(PersonProperty.NAME)));
+        return sortedPersons;
     }
 
     /*

@@ -101,6 +101,10 @@
 + 
 + 0 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 
++ 0 persons found!
++ ===================================================
 + Enter command: + [Command entered:  add wrong args wrong args]
 + Invalid command format: add 
 + add: Adds a person to the address book.
@@ -151,10 +155,21 @@
 + 
 + 1 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 
++ 1 persons found!
++ ===================================================
 + Enter command: + [Command entered:  add Betsy Choo p/222222 e/benchoo@nus.edu.sg]
 + New person added: Betsy Choo, Phone: 222222, Email: benchoo@nus.edu.sg
 + ===================================================
 + Enter command: + [Command entered:  list]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 
++ 2 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
 + 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 + 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 + 
@@ -170,10 +185,25 @@
 + 
 + 3 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 
++ 3 persons found!
++ ===================================================
 + Enter command: + [Command entered:  add John Sim p/91234568 e/hellooo@example.com]
 + New person added: John Sim, Phone: 91234568, Email: hellooo@example.com
 + ===================================================
 + Enter command: + [Command entered:  list]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	4. John Sim  Phone Number: 91234568  Email: hellooo@example.com
++ 
++ 4 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
 + 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 + 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 + 	3. John Doe  Phone Number: 91234567  Email: hello@example.com
@@ -193,6 +223,15 @@
 + 
 + 5 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	4. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	5. John Sim  Phone Number: 91234568  Email: hellooo@example.com
++ 
++ 5 persons found!
++ ===================================================
 + Enter command: + [Command entered:  add Marvin p/81111111 e/marvin@marvin.com]
 + New person added: Marvin, Phone: 81111111, Email: marvin@marvin.com
 + ===================================================
@@ -202,6 +241,16 @@
 + 	3. John Doe  Phone Number: 91234567  Email: hello@example.com
 + 	4. John Sim  Phone Number: 91234568  Email: hellooo@example.com
 + 	5. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	6. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
++ 
++ 6 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	4. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	5. John Sim  Phone Number: 91234568  Email: hellooo@example.com
 + 	6. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
 + 
 + 6 persons found!
@@ -220,6 +269,17 @@
 + 
 + 7 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	4. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	5. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	6. John Sim  Phone Number: 91234568  Email: hellooo@example.com
++ 	7. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
++ 
++ 7 persons found!
++ ===================================================
 + Enter command: + [Command entered:  add Dickson Ee e/dickson@nus.edu.sg p/444444]
 + New person added: Dickson Ee, Phone: 444444, Email: dickson@nus.edu.sg
 + ===================================================
@@ -232,6 +292,18 @@
 + 	6. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
 + 	7. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 + 	8. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 
++ 8 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 	5. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	6. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	7. John Sim  Phone Number: 91234568  Email: hellooo@example.com
++ 	8. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
 + 
 + 8 persons found!
 + ===================================================
@@ -248,6 +320,19 @@
 + 	7. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 + 	8. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
 + 	9. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 
++ 9 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 	5. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	6. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 	7. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 	8. John Sim  Phone Number: 91234568  Email: hellooo@example.com
++ 	9. Marvin  Phone Number: 81111111  Email: marvin@marvin.com
 + 
 + 9 persons found!
 + ===================================================
@@ -345,16 +430,37 @@
 + 
 + 7 persons found!
 + ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 	5. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	6. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 	7. John Doe  Phone Number: 91234567  Email: hello@example.com
++ 
++ 7 persons found!
++ ===================================================
 + Enter command: + [Command entered:  delete 4]
-+ Deleted Person: Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ Deleted Person: Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
 + ===================================================
 + Enter command: + [Command entered:  list]
 + 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
 + 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 + 	3. John Doe  Phone Number: 91234567  Email: hello@example.com
-+ 	4. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
-+ 	5. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 	4. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	5. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 + 	6. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 
++ 6 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
++ 	2. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	4. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 	6. John Doe  Phone Number: 91234567  Email: hello@example.com
 + 
 + 6 persons found!
 + ===================================================
@@ -364,9 +470,18 @@
 + Enter command: + [Command entered:  list]
 + 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 + 	2. John Doe  Phone Number: 91234567  Email: hello@example.com
-+ 	3. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
-+ 	4. Dickson Ee  Phone Number: 444444  Email: dickson@nus.edu.sg
++ 	3. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	4. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
 + 	5. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 
++ 5 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
++ 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
++ 	2. Charlie Dickson  Phone Number: 333333  Email: charlie.d@nus.edu.sg
++ 	3. Dohn Joe  Phone Number: 81234567  Email: joe@dohn.com
++ 	4. Esther Potato  Phone Number: 555555  Email: esther@notreal.potato
++ 	5. John Doe  Phone Number: 91234567  Email: hello@example.com
 + 
 + 5 persons found!
 + ===================================================
@@ -374,6 +489,10 @@
 + Address book has been cleared!
 + ===================================================
 + Enter command: + [Command entered:  list]
++ 
++ 0 persons found!
++ ===================================================
++ Enter command: + [Command entered:  sort]
 + 
 + 0 persons found!
 + ===================================================

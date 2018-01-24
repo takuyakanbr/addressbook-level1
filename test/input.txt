@@ -15,6 +15,7 @@
   # address book should be emptied
   clear
   list
+  sort
 
 ##########################################################
 # test add person command, setup state for futuer tests
@@ -33,24 +34,33 @@
   # should add correctly
   add Adam Brown p/111111 e/adam@gmail.com
   list
+  sort
   add Betsy Choo p/222222 e/benchoo@nus.edu.sg
   list
+  sort
   add John Doe p/91234567 e/hello@example.com
   list
+  sort
   add John Sim p/91234568 e/hellooo@example.com
   list
+  sort
   add Dohn Joe p/81234567 e/joe@dohn.com
   list
+  sort
   add Marvin p/81111111 e/marvin@marvin.com
   list
+  sort
 
   # order of phone and email should not matter
   add Charlie Dickson e/charlie.d@nus.edu.sg p/333333
   list
+  sort
   add Dickson Ee e/dickson@nus.edu.sg p/444444
   list
+  sort
   add Esther Potato p/555555 e/esther@notreal.potato
   list
+  sort
 
 ##########################################################
 # test find persons command
@@ -95,14 +105,17 @@
 
   # should have deleted based on last active view's index
   list
+  sort
 
   # deletes correct person
   delete 4
   list
+  sort
 
   # listing indexes get updated on next request
   delete 1
   list
+  sort
 
 ##########################################################
 # test clear command
@@ -111,6 +124,7 @@
   # clears all
   clear
   list
+  sort
 
 ##########################################################
 # test exit command
