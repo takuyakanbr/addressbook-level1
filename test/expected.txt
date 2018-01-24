@@ -61,6 +61,9 @@
 + list: Displays all persons as a list with index numbers.
 + 	Example: list
 + 
++ sort: Displays all persons as a list, sorted by their names.
++ 	Example: sort
++ 
 + delete: Deletes a person identified by the index number used in the last find/list call.
 + 	Parameters: INDEX
 + 	Example: delete 1
@@ -83,6 +86,9 @@
 + 
 + list: Displays all persons as a list with index numbers.
 + 	Example: list
++ 
++ sort: Displays all persons as a list, sorted by their names.
++ 	Example: sort
 + 
 + delete: Deletes a person identified by the index number used in the last find/list call.
 + 	Parameters: INDEX
