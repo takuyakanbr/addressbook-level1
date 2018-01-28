@@ -209,7 +209,13 @@ public class AddressBook {
         showWelcomeMessage();
         processProgramArgs(args);
         loadDataFromStorage();
+        processUserCommandsUntilExit();
+    }
 
+    /**
+     * Keeps reading and processing user commands, until the program is exited.
+     */
+    private static void processUserCommandsUntilExit() {
         while (true) {
             String userCommand = getUserInput();
             echoUserCommand(userCommand);
